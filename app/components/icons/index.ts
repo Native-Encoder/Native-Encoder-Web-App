@@ -1,1 +1,1 @@
-export { WhatsAppIcon } from "./WhatsAppIcon";
+export { WhatsappButton } from './WhatsAppButton';
