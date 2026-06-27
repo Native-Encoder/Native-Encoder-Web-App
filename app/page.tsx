@@ -1,10 +1,5 @@
-import HomePage from "./(pages)/home/page";
-
+import { permanentRedirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <>
-      <HomePage />
-    </>
-  );
+  permanentRedirect("/home");
 }
