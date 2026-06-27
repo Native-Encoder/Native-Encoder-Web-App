@@ -9,7 +9,7 @@ export function WhatsappButton() {
         <div className="fixed bottom-6 right-6 z-50">
             {/* Tooltip */}
             <div
-                className={`absolute bottom-[68px] right-0 flex items-center gap-2 bg-white text-gray-800 pl-3 pr-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-all duration-300 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
+                className={`absolute bottom-17 right-0 flex items-center gap-2 bg-white text-gray-800 pl-3 pr-4 py-2.5 rounded-full text-sm font-medium whitespace-nowrap shadow-[0_4px_20px_rgba(0,0,0,0.15)] transition-all duration-300 ${isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
                     }`}
             >
                 <span className="relative flex h-2 w-2">
