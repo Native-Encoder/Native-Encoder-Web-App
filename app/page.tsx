@@ -1,5 +1,9 @@
-import { permanentRedirect } from "next/navigation";
 
 export default function Home() {
-  permanentRedirect("/home");
+
+  return (
+    <>
+      <h1 className="text-3xl font-bold">Home</h1>
+    </>
+  );
 }
