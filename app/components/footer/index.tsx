@@ -7,209 +7,234 @@ import {
   FaFacebookF,
   FaYoutube,
   FaLinkedinIn,
+  FaWhatsapp,
+  FaFacebookMessenger,
   FaPhone,
   FaEnvelope,
+  FaTiktok,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
-import { RiTwitterXFill } from "react-icons/ri";
-
 export default function Footer() {
-    return (
-        <footer className="relative overflow-hidden bg-gray-50 border-t border-gray-200">
-            {/* Left Decorative Shape */}
-            <div className="absolute bottom-0 left-0 opacity-70 pointer-events-none">
+  return (
+    <footer className="relative overflow-hidden bg-slate-950 text-white">
+      {/* Background Blur */}
+      <div className="absolute -top-44 right-0 h-96 w-96 rounded-full bg-indigo-600/20 blur-[140px]" />
+      <div className="absolute -bottom-32 -left-20 h-80 w-80 rounded-full bg-sky-500/20 blur-[120px]" />
+
+      <div className="relative z-10">
+        {/* ================= CTA ================= */}
+        <div className="mx-auto max-w-7xl px-5 pt-16">
+          <div className="overflow-hidden rounded-3xl bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 p-10 shadow-2xl">
+            <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+              <div>
+                <span className="inline-block rounded-full bg-white/15 px-4 py-1 text-sm font-medium backdrop-blur">
+                  LET'S WORK TOGETHER
+                </span>
+
+                <h2 className="mt-5 text-3xl font-bold md:text-5xl">
+                  Ready to Start
+                  <br />
+                  Your Next Project?
+                </h2>
+
+                <p className="mt-4 max-w-xl text-white/80">
+                  Whether you're a student or a business, Native Encoder is
+                  here to turn your ideas into reality.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-6 py-4 backdrop-blur transition hover:bg-white/20"
+                >
+                  <FaWhatsapp className="text-2xl text-green-400" />
+                  WhatsApp
+                </Link>
+
+                <Link
+                  href="#"
+                  className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-6 py-4 backdrop-blur transition hover:bg-white/20"
+                >
+                  <FaFacebookMessenger className="text-2xl text-blue-300" />
+                  Messenger
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ================= Main Footer ================= */}
+        <div className="mx-auto max-w-7xl px-5 py-20">
+          <div className="grid gap-14 lg:grid-cols-12">
+            {/* Company */}
+            <div className="lg:col-span-5">
+              <Link href="/" className="flex items-center gap-3">
                 <Image
-                    src="/assets/images/footer/shape-left.svg"
-                    alt=""
-                    width={180}
-                    height={180}
+                  src="/assets/images/native-encoder-logo-white.png"
+                  width={60}
+                  height={60}
+                  alt="Native Encoder"
                 />
+
+                <span className="text-3xl font-bold">
+                  Native <span className="text-sky-400">Encoder</span>
+                </span>
+              </Link>
+
+              <p className="mt-6 max-w-md leading-8 text-slate-400">
+                We empower students, researchers, startups, and businesses with
+                professional academic assistance, software development, and
+                innovative digital solutions.
+              </p>
+
+              {/* Social Icons */}
+              <div className="mt-8 flex gap-4">
+                {[FaFacebookF, FaTiktok, FaYoutube, FaLinkedinIn].map(
+                  (Icon, index) => (
+                    <Link
+                      key={index}
+                      href="#"
+                      className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-slate-900 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-sky-500 hover:bg-sky-500 hover:text-white"
+                    >
+                      <Icon />
+                    </Link>
+                  )
+                )}
+              </div>
             </div>
 
-            {/* Right Decorative Shape */}
-            <div className="absolute top-8 right-0 opacity-70 pointer-events-none">
-                <Image
-                    src="/assets/images/footer/shape-right.svg"
-                    alt=""
-                    width={140}
-                    height={140}
-                />
+            {/* Quick Links */}
+            <div className="lg:col-span-2">
+              <h3 className="mb-6 text-xl font-semibold">Quick Links</h3>
+
+              <ul className="space-y-4 text-slate-400">
+                <li>
+                  <Link href="#home" className="hover:text-sky-400">
+                    Home
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="#services" className="hover:text-sky-400">
+                    Services
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="#portfolio" className="hover:text-sky-400">
+                    Portfolio
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="#testimonials" className="hover:text-sky-400">
+                    Testimonials
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href="#contact" className="hover:text-sky-400">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
             </div>
 
-            <div className="relative z-10 max-w-[1320px] mx-auto px-5 lg:px-8 py-24">
-                <div className="grid gap-12 lg:grid-cols-12">
-                    {/* Company */}
-                    <div className="lg:col-span-5">
-                        <Link href="/" className="flex items-center gap-3">
-                            <Image
-                                src="/assets/images/native-encoder-logo.svg"
-                                alt="Native Encoder"
-                                width={55}
-                                height={55}
-                            />
+            {/* Services */}
+            <div className="lg:col-span-2">
+              <h3 className="mb-6 text-xl font-semibold">Services</h3>
 
-                            <span className="text-2xl font-bold text-gray-900">
-                                Native Encoder
-                            </span>
-                        </Link>
+              <ul className="space-y-4 text-slate-400">
+                <li className="hover:text-sky-400 cursor-pointer">
+                  Assignment Writing
+                </li>
 
-                        <p className="mt-6 max-w-md text-gray-600 leading-8">
-                            We empower students, startups, and businesses with professional
-                            software development, assignment assistance, research guidance,
-                            and innovative digital solutions.
-                        </p>
+                <li className="hover:text-sky-400 cursor-pointer">
+                  Research & Thesis
+                </li>
 
-                        {/* Social Icons */}
-                        <div className="mt-8 flex items-center gap-6">
-                            <a
-                                href="#"
-                                className="text-gray-500 transition-all duration-300 hover:text-blue-600 hover:-translate-y-1"
-                            >
-                                <FaFacebookF size={18} />
-                            </a>
+                <li className="hover:text-sky-400 cursor-pointer">
+                  Software Development
+                </li>
 
-                            <a
-                                href="#"
-                                className="text-gray-500 transition-all duration-300 hover:text-blue-600 hover:-translate-y-1"
-                            >
-                                <RiTwitterXFill size={18} />
-                            </a>
+                <li className="hover:text-sky-400 cursor-pointer">
+                  Business Websites
+                </li>
 
-                            <a
-                                href="#"
-                                className="text-gray-500 transition-all duration-300 hover:text-blue-600 hover:-translate-y-1"
-                            >
-                                <FaYoutube size={18} />
-                            </a>
+                <li className="hover:text-sky-400 cursor-pointer">
+                  Social Media Management
+                </li>
+              </ul>
+            </div>
 
-                            <a
-                                href="#"
-                                className="text-gray-500 transition-all duration-300 hover:text-blue-600 hover:-translate-y-1"
-                            >
-                                <FaLinkedinIn size={18} />
-                            </a>
-                        </div>
-                    </div>
+            {/* Contact */}
+            <div className="lg:col-span-3">
+              <h3 className="mb-6 text-xl font-semibold">Contact</h3>
 
-                    {/* Quick Links */}
-                    <div className="lg:col-span-2">
-                        <h3 className="mb-6 text-xl font-semibold text-gray-900">
-                            Quick Links
-                        </h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-sky-500/20 p-3 text-sky-400">
+                    <FaPhone />
+                  </div>
 
-                        <ul className="space-y-4">
-                            <li>
-                                <Link
-                                    href="/"
-                                    className="text-gray-600 transition hover:text-blue-600"
-                                >
-                                    Home
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link
-                                    href="/about-us"
-                                    className="text-gray-600 transition hover:text-blue-600"
-                                >
-                                    About Us
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link
-                                    href="/services"
-                                    className="text-gray-600 transition hover:text-blue-600"
-                                >
-                                    Services
-                                </Link>
-                            </li>
-
-                            <li>
-                                <Link
-                                    href="/feedback"
-                                    className="text-gray-600 transition hover:text-blue-600"
-                                >
-                                    Client Feedback
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Services */}
-                    <div className="lg:col-span-2">
-                        <h3 className="mb-6 text-xl font-semibold text-gray-900">
-                            Services
-                        </h3>
-
-                        <ul className="space-y-4">
-                            <li className="text-gray-600 transition hover:text-blue-600 cursor-pointer">
-                                Assignment Writing
-                            </li>
-
-                            <li className="text-gray-600 transition hover:text-blue-600 cursor-pointer">
-                                Research Projects
-                            </li>
-
-                            <li className="text-gray-600 transition hover:text-blue-600 cursor-pointer">
-                                Web Development
-                            </li>
-
-                            <li className="text-gray-600 transition hover:text-blue-600 cursor-pointer">
-                                IT Consultation
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="lg:col-span-3">
-                        <h3 className="mb-6 text-xl font-semibold text-gray-900">
-                            Contact
-                        </h3>
-
-                        <div className="space-y-5">
-                            <div className="flex items-center gap-3 text-gray-600">
-                                <FaPhone size={18} className="text-blue-600" />
-                                <span>+94 71 603 2454</span>
-                            </div>
-
-                            <div className="flex items-center gap-3 text-gray-600">
-                                <FaEnvelope size={18} className="text-blue-600" />
-                                <span>info@nativeencoder.com</span>
-                            </div>
-
-                            <div className="flex items-center gap-3 text-gray-600">
-                                <FaMapMarkerAlt size={18} className="text-blue-600" />
-                                <span>Colombo, Sri Lanka</span>
-                            </div>
-                        </div>
-                    </div>
+                  <div>
+                    <p className="text-sm text-slate-500">Phone</p>
+                    <p className="text-slate-300">+94 71 603 2454</p>
+                  </div>
                 </div>
 
-                {/* Bottom */}
-                <div className="mt-16 border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-sm text-gray-500">
-                        © {new Date().getFullYear()} Native Encoder. All rights reserved.
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-purple-500/20 p-3 text-purple-400">
+                    <FaEnvelope />
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-slate-500">Email</p>
+                    <p className="text-slate-300">
+                      info@nativeencoder.com
                     </p>
-
-                    <div className="flex items-center gap-8 text-sm">
-                        <Link
-                            href="/privacy-policy"
-                            className="text-gray-500 transition hover:text-blue-600"
-                        >
-                            Privacy Policy
-                        </Link>
-
-                        <Link
-                            href="/terms-and-conditions"
-                            className="text-gray-500 transition hover:text-blue-600"
-                        >
-                            Terms & Conditions
-                        </Link>
-                    </div>
+                  </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="rounded-xl bg-indigo-500/20 p-3 text-indigo-400">
+                    <FaMapMarkerAlt />
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-slate-500">Location</p>
+                    <p className="text-slate-300">Colombo, Sri Lanka</p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </footer>
-    );
+          </div>
+
+          {/* Bottom */}
+          <div className="mt-16 flex flex-col items-center justify-between gap-5 border-t border-slate-800 pt-8 md:flex-row">
+            <p className="text-sm text-slate-500">
+              © {new Date().getFullYear()} Native Encoder. All rights reserved.
+            </p>
+
+            <div className="flex gap-8 text-sm text-slate-500">
+              <Link href="/privacy-policy" className="hover:text-sky-400">
+                Privacy Policy
+              </Link>
+
+              <Link href="/terms-and-conditions" className="hover:text-sky-400">
+                Terms & Conditions
+              </Link>
+            </div>
+
+            <p className="text-sm text-slate-500">
+              Designed with ❤️ by{" "}
+              <span className="text-sky-400">Native Encoder</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
