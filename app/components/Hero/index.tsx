@@ -51,6 +51,10 @@ export default function Hero() {
               </div>
 
               <div className="rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+                📝 Assignment Writing
+              </div>
+
+              <div className="rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
                 📚 Research & Thesis
               </div>
 
@@ -59,7 +63,7 @@ export default function Hero() {
               </div>
 
               <div className="rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
-                📈 Social Media
+                📈 Social Media Management
               </div>
 
             </div>
@@ -88,7 +92,7 @@ export default function Hero() {
             <div className="mt-14 grid grid-cols-3 gap-6">
 
               <div>
-                <h2 className="text-3xl font-bold text-gray-900">3+</h2>
+                <h2 className="text-3xl font-bold text-gray-900">4+</h2>
                 <p className="text-gray-600">Years Experience</p>
               </div>
 
