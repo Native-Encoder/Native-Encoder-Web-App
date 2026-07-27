@@ -6,6 +6,7 @@ import {
   FaGraduationCap,
   FaLaptopCode,
   FaGlobe,
+  FaFileAlt,
   FaCode,
 } from "react-icons/fa";
 
@@ -16,7 +17,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-0 top-0 h-[450px] w-[450px] rounded-full bg-blue-100 blur-[120px]" />
         <div className="absolute right-0 bottom-0 h-[400px] w-[400px] rounded-full bg-sky-100 blur-[120px]" />
-    </div>
+      </div>
 
       <div className="mx-auto max-w-7xl px-6 pt-24 pb-20 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -146,6 +147,21 @@ export default function Hero() {
                 </div>
 
                 <div className="flex items-center gap-4 rounded-xl bg-gray-50 p-4">
+                  <div className="rounded-lg bg-red-100 p-3">
+                    <FaFileAlt className="text-2xl text-red-600" />
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold text-gray-800">
+                      Assignment Writing
+                    </h4>
+                    <p className="text-sm text-gray-500">
+                      Quality Academic Assistance
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 rounded-xl bg-gray-50 p-4">
 
                   <div className="rounded-lg bg-green-100 p-3">
                     <FaGraduationCap className="text-2xl text-green-600" />
@@ -177,28 +193,6 @@ export default function Hero() {
                     </p>
                   </div>
 
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Floating Card */}
-            <div className="absolute -left-8 bottom-10 hidden rounded-2xl border bg-white p-5 shadow-xl lg:block">
-
-              <div className="flex items-center gap-3">
-
-                <div className="rounded-full bg-blue-100 p-3">
-                  <FaGlobe className="text-blue-600" />
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-gray-800">
-                    Business Growth
-                  </h4>
-                  <p className="text-sm text-gray-500">
-                    Digital Solutions
-                  </p>
                 </div>
 
               </div>
