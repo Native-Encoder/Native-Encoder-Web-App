@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 import Header from "./components/header/index";
-import Footer from "./components/footer/index"
-import { WhatsappButton } from "./components/icons"
+import Footer from "./components/footer/index";
+import { WhatsappButton } from "./components/icons";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,11 +31,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col">
+      <body className="min-h-full">
         <Header />
-        {children}
-        <WhatsappButton />
+
+        <main>{children}</main>
+
         <Footer />
+
+        <WhatsappButton />
       </body>
     </html>
   );

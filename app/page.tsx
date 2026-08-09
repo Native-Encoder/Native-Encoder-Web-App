@@ -4,10 +4,10 @@ import Services from "./components/Services";
 import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Process from "./components/Process";
-// import Portfolio from "@/components/Portfolio";
-// import Testimonials from "@/components/Testimonials";
-// import FAQ from "@/components/FAQ";
-// import CTA from "@/components/CTA";
+import Portfolio from "./components/Portfolio";
+import Testimonials from "./components/Testimonials";
+import FAQ from "./components/FAQ";
+import CTA from "./components/CTA";
 
 export default function Home() {
   return (
@@ -18,10 +18,10 @@ export default function Home() {
       <About />
       <WhyChooseUs />
       <Process />
-      {/* <Portfolio />
+      <Portfolio />
       <Testimonials />
       <FAQ />
-      <CTA /> */}
+      <CTA />
     </>
   );
 }
