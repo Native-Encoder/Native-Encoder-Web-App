@@ -11,17 +11,44 @@ import CTA from "./components/CTA";
 
 export default function Home() {
   return (
-    <>
-      <Hero />
-      <Stats />
-      <Services />
-      <About />
-      <WhyChooseUs />
-      <Process />
-      <Portfolio />
-      <Testimonials />
-      <FAQ />
-      <CTA />
-    </>
+        <>
+            <section id="home">
+                <Hero />
+            </section>
+
+            <Stats />
+
+            <section id="services">
+                <Services />
+            </section>
+
+            <section id="about">
+                <About />
+            </section>
+
+            <section id="why-us">
+                <WhyChooseUs />
+            </section>
+
+            <section id="process">
+                <Process />
+            </section>
+
+            <section id="portfolio">
+                <Portfolio />
+            </section>
+
+            <section id="testimonials">
+                <Testimonials />
+            </section>
+
+            <section id="faq">
+                <FAQ />
+            </section>
+
+            <section id="contact">
+                <CTA />
+            </section>
+        </>
   );
 }
