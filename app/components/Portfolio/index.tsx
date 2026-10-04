@@ -14,65 +14,48 @@ import {
 
 const categories = [
   "All",
-  "Web Development",
+  "Business Website",
   "Software Projects",
   "Academic Projects",
 ];
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    category: "Web Development",
+    title: "Vehicle Reservation Service System",
+    category: "Academic Projects",
     description:
-      "A modern e-commerce platform designed with a seamless shopping experience, product management and secure customer interactions.",
+      "A modern vehicle reservation service platform features a responsive and user-friendly UI, ensuring a smooth experience for both service staff and customers, while streamlining vehicle service operations and record management.",
+    icon: FaGraduationCap,
+    technologies: ["ASP.NET", "React.js", "Tailwind CSS", "MongoDB"],
+    image: "/assets/images/Portfolio/Project1.png",
+  },
+  {
+    title: "Learning Management System",
+    category: "Academic Projects",
+    description:
+      "A Laravel-based Learning Management System offering user authentication, role-based access control, class scheduling, timetable management, exam management, result management, academic performance tracking, profile management, and role-based dashboards.",
+    icon: FaGraduationCap,
+    technologies: ["Laravel", "Bootstrap", "MySQL"],
+    image: "/assets/images/Portfolio/Project2.png",
+  },
+  {
+    title: "Footwear Sales & Inventory Management System",
+    category: "Academic Projects",
+    description:
+      "A a comprehensive Footwear Management System to streamline product inventory, sales, stock management, customer management, and order processing, providing an efficient solution for managing day-to-day footwear business operations.",
+    icon: FaGraduationCap,
+    technologies: ["Express.js", "React.js", "Node.js", "MongoDB"],
+    image: "/assets/images/Portfolio/Project3.png",
+  },
+  {
+    title: "MFX – Fitness & Personal Training Platform",
+    category: "Business Website",
+    description:
+      "A modern fitness platform offering personal training, customized workout programs, online coaching, memberships, and fitness transformation services.",
     icon: FaGlobe,
-    technologies: ["React", "Node.js", "MongoDB"],
-    image: "/portfolio/ecommerce.jpg",
-  },
-  {
-    title: "Business Management System",
-    category: "Software Projects",
-    description:
-      "A complete business management solution designed to simplify operations, data management and reporting.",
-    icon: FaDatabase,
-    technologies: [".NET", "SQL Server", "React"],
-    image: "/portfolio/business-system.jpg",
-  },
-  {
-    title: "Student Management System",
-    category: "Academic Projects",
-    description:
-      "A comprehensive student management platform developed to manage student records, classes and academic activities.",
-    icon: FaGraduationCap,
-    technologies: ["Laravel", "MySQL", "Blade"],
-    image: "/portfolio/student-system.jpg",
-  },
-  {
-    title: "Responsive Business Website",
-    category: "Web Development",
-    description:
-      "A modern responsive website designed to establish a strong online presence and improve customer engagement.",
-    icon: FaLaptopCode,
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    image: "/portfolio/business-website.jpg",
-  },
-  {
-    title: "Mobile Application",
-    category: "Software Projects",
-    description:
-      "A user-friendly mobile application developed with a focus on performance, usability and modern interface design.",
-    icon: FaMobileAlt,
-    technologies: ["Flutter", "Firebase", "REST API"],
-    image: "/portfolio/mobile-app.jpg",
-  },
-  {
-    title: "Research & Final Year Project",
-    category: "Academic Projects",
-    description:
-      "A complete academic project covering research, system analysis, implementation and technical documentation.",
-    icon: FaGraduationCap,
-    technologies: ["Research", "System Design", "Development"],
-    image: "/portfolio/research-project.jpg",
+    technologies: ["React.js", "Tailwind CSS"],
+    image: "/assets/images/Portfolio/Project4.png",
+    link: "https://www.mashoodfitness.com/",
   },
 ];
 
@@ -83,8 +66,8 @@ export default function Portfolio() {
     activeCategory === "All"
       ? projects
       : projects.filter(
-          (project) => project.category === activeCategory
-        );
+        (project) => project.category === activeCategory
+      );
 
   return (
     <section className="bg-white py-24">
@@ -119,11 +102,10 @@ export default function Portfolio() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${
-                activeCategory === category
+              className={`rounded-full px-5 py-2.5 text-sm font-semibold transition ${activeCategory === category
                   ? "bg-blue-600 text-white shadow-lg"
                   : "bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-600"
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -164,17 +146,6 @@ export default function Portfolio() {
                     <Icon className="text-xl" />
                   </div>
 
-                  {/* View Button */}
-
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 transition duration-500 group-hover:opacity-100">
-
-                    <button className="flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-gray-900 shadow-xl transition hover:bg-blue-600 hover:text-white">
-                      View Project
-                      <FaExternalLinkAlt className="text-xs" />
-                    </button>
-
-                  </div>
-
                 </div>
 
                 {/* Content */}
@@ -207,7 +178,16 @@ export default function Portfolio() {
                     ))}
 
                   </div>
-
+                  {/* View Website Button */} 
+                  {project.link && (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 transition-colors duration-300 hover:text-blue-800"> 
+                      View Website 
+                      <FaExternalLinkAlt className="text-xs" /> 
+                    </a>)}
                 </div>
 
               </div>
