@@ -1,47 +1,63 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
-  FaStar,
-  FaQuoteLeft,
   FaChevronLeft,
   FaChevronRight,
-  FaGraduationCap,
-  FaBriefcase,
+  FaStar,
 } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "Student Client",
-    role: "University Undergraduate",
-    category: "Academic",
-    icon: FaGraduationCap,
-    message:
-      "Native Encoder helped me throughout my final-year project. Their guidance, technical support, and attention to detail made the entire process much easier. I really appreciate their professionalism and support.",
+    image: "/assets/images/Testimonials/Feedback1.jpeg",
+    category: "Academic Project",
+    position: "center 72%",
   },
   {
-    name: "Business Client",
-    role: "Business Owner",
-    category: "Business",
-    icon: FaBriefcase,
-    message:
-      "The team understood exactly what we needed for our business website. The final result was modern, professional, and easy to use. Communication was excellent throughout the project.",
+    image: "/assets/images/Testimonials/Feedback2.jpeg",
+    category: "Academic Support",
+    position: "center 70%",
   },
   {
-    name: "Student Client",
-    role: "University Student",
-    category: "Academic",
-    icon: FaGraduationCap,
-    message:
-      "I received excellent support for my research project. Everything was explained clearly and delivered according to the requirements. Native Encoder is definitely a team I would recommend.",
+    image: "/assets/images/Testimonials/Feedback3.jpeg",
+    category: "Academic Project",
+    position: "center 70%",
   },
   {
-    name: "Business Client",
-    role: "Entrepreneur",
-    category: "Business",
-    icon: FaBriefcase,
-    message:
-      "From the initial discussion to the final delivery, the team was very professional. They created a solution that matched our requirements perfectly and provided great after-service support.",
+    image: "/assets/images/Testimonials/Feedback4.jpeg",
+    category: "Academic Project",
+    position: "center 72%",
+  },
+    {
+    image: "/assets/images/Testimonials/Feedback5.jpeg",
+    category: "Academic Project",
+    position: "center 65%",
+  },
+  {
+    image: "/assets/images/Testimonials/Feedback6.jpg",
+    category: "Academic Support",
+    position: "center 76%",
+  },
+  {
+    image: "/assets/images/Testimonials/Feedback7.jpg",
+    category: "Academic Support",
+    position: "center 80%",
+  },
+  {
+    image: "/assets/images/Testimonials/Feedback8.jpg",
+    category: "Academic Support",
+    position: "center 68%",
+  },
+  {
+    image: "/assets/images/Testimonials/Feedback9.jpg",
+    category: "Academic Support",
+    position: "center 70%",
+  },
+  {
+    image: "/assets/images/Testimonials/Feedback10.jpg",
+    category: "Academic Support",
+    position: "center 76%",
   },
 ];
 
@@ -49,7 +65,6 @@ export default function Testimonials() {
   const [active, setActive] = useState(0);
 
   const testimonial = testimonials[active];
-  const Icon = testimonial.icon;
 
   const previous = () => {
     setActive((current) =>
@@ -68,7 +83,6 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* Heading */}
-
         <div className="mx-auto max-w-3xl text-center">
 
           <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-semibold text-blue-600">
@@ -81,93 +95,72 @@ export default function Testimonials() {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Don't just take our word for it. Here's what students and
-            businesses say about their experience with Native Encoder.
+            Real feedback from students and businesses who trusted
+            Native Encoder with their projects.
           </p>
 
         </div>
 
-        {/* Testimonial */}
+        {/* Feedback Carousel */}
+        <div className="mx-auto mt-16 max-w-4xl">
 
-        <div className="mx-auto mt-16 max-w-5xl">
+          <div className="relative">
 
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 p-8 shadow-2xl md:p-12">
+            {/* Feedback Image */}
+            <div className="relative mx-auto aspect-square w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-xl">
 
-            {/* Decorative Quote */}
+              <Image
+                key={testimonial.image}
+                src={testimonial.image}
+                alt="Native Encoder client feedback"
+                fill
+                priority
+                className="object-cover"
+                style={{
+                  objectPosition: testimonial.position,
+                }}
+              />
 
-            <FaQuoteLeft className="absolute right-10 top-8 text-8xl text-white/10" />
+              {/* Left Button */}
+              <button
+                onClick={previous}
+                aria-label="Previous feedback"
+                className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow-lg backdrop-blur transition hover:bg-blue-600 hover:text-white"
+              >
+                <FaChevronLeft />
+              </button>
 
-            <div className="relative z-10">
+              {/* Right Button */}
+              <button
+                onClick={next}
+                aria-label="Next feedback"
+                className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-gray-800 shadow-lg backdrop-blur transition hover:bg-blue-600 hover:text-white"
+              >
+                <FaChevronRight />
+              </button>
 
-              {/* Category */}
+            </div>
 
-              <div className="flex items-center gap-3">
+            {/* Feedback Information */}
+            <div className="mt-6 flex items-center justify-between px-2">
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
-                  <Icon className="text-xl text-white" />
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+                  {testimonial.category}
+                </p>
+
+                <div className="mt-2 flex gap-1">
+                  {[...Array(5)].map((_, index) => (
+                    <FaStar
+                      key={index}
+                      className="text-sm text-yellow-400"
+                    />
+                  ))}
                 </div>
-
-                <div>
-
-                  <p className="text-sm font-semibold text-blue-100">
-                    {testimonial.category}
-                  </p>
-
-                  <div className="mt-1 flex gap-1">
-                    {[...Array(5)].map((_, index) => (
-                      <FaStar
-                        key={index}
-                        className="text-sm text-yellow-300"
-                      />
-                    ))}
-                  </div>
-
-                </div>
-
               </div>
 
-              {/* Quote */}
-
-              <blockquote className="mt-10 max-w-4xl text-2xl font-medium leading-relaxed text-white md:text-3xl">
-                “{testimonial.message}”
-              </blockquote>
-
-              {/* Client */}
-
-              <div className="mt-10 flex items-center justify-between">
-
-                <div>
-                  <h3 className="text-lg font-bold text-white">
-                    {testimonial.name}
-                  </h3>
-
-                  <p className="mt-1 text-sm text-blue-100">
-                    {testimonial.role}
-                  </p>
-                </div>
-
-                {/* Navigation */}
-
-                <div className="flex gap-3">
-
-                  <button
-                    onClick={previous}
-                    aria-label="Previous testimonial"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition hover:bg-white hover:text-blue-600"
-                  >
-                    <FaChevronLeft />
-                  </button>
-
-                  <button
-                    onClick={next}
-                    aria-label="Next testimonial"
-                    className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white transition hover:bg-white hover:text-blue-600"
-                  >
-                    <FaChevronRight />
-                  </button>
-
-                </div>
-
+              <div className="text-sm font-medium text-gray-500">
+                {active + 1} / {testimonials.length}
               </div>
 
             </div>
@@ -175,14 +168,12 @@ export default function Testimonials() {
           </div>
 
           {/* Indicators */}
-
           <div className="mt-8 flex justify-center gap-2">
-
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActive(index)}
-                aria-label={`Go to testimonial ${index + 1}`}
+                aria-label={`View feedback ${index + 1}`}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
                   active === index
                     ? "w-8 bg-blue-600"
@@ -190,19 +181,21 @@ export default function Testimonials() {
                 }`}
               />
             ))}
-
           </div>
 
         </div>
 
         {/* Trust Stats */}
-
         <div className="mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-3">
 
+          {/* Rating */}
           <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
             <div className="flex justify-center gap-1">
-              {[...Array(5)].map((_, index) => (
-                <FaStar key={index} className="text-yellow-400" />
+              {[...Array(10)].map((_, index) => (
+                <FaStar
+                  key={index}
+                  className="text-yellow-400"
+                />
               ))}
             </div>
 
@@ -211,6 +204,7 @@ export default function Testimonials() {
             </p>
           </div>
 
+          {/* Client Focus */}
           <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
             <h3 className="text-3xl font-bold text-blue-600">
               100%
@@ -221,6 +215,7 @@ export default function Testimonials() {
             </p>
           </div>
 
+          {/* Experience */}
           <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
             <h3 className="text-3xl font-bold text-blue-600">
               3+

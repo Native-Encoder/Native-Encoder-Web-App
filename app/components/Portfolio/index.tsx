@@ -57,6 +57,16 @@ const projects = [
     image: "/assets/images/Portfolio/Project4.png",
     link: "https://www.mashoodfitness.com/",
   },
+  {
+    title: "147 Digital – Digital Marketing & Branding Website",
+    category: "Business Website",
+    description:
+      "A modern, high-impact website developed for 147 Digital, designed to showcase their digital marketing, branding, content creation, and growth-focused services.",
+    icon: FaGlobe,
+    technologies: ["Next.js", "React.js", "Tailwind CSS"],
+    image: "/assets/images/Portfolio/Project5.png",
+    link: "https://147digitalsl.com/",
+  },
 ];
 
 export default function Portfolio() {
