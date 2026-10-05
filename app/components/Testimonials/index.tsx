@@ -191,7 +191,7 @@ export default function Testimonials() {
           {/* Rating */}
           <div className="rounded-2xl bg-white p-6 text-center shadow-sm">
             <div className="flex justify-center gap-1">
-              {[...Array(10)].map((_, index) => (
+              {[...Array(5)].map((_, index) => (
                 <FaStar
                   key={index}
                   className="text-yellow-400"
