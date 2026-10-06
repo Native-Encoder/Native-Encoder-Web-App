@@ -45,6 +45,28 @@ export default function Header() {
         },
     ];
 
+    const handleNavClick = (
+        e: React.MouseEvent<HTMLAnchorElement>,
+        href: string
+    ) => {
+        e.preventDefault();
+
+        const target = document.querySelector(href);
+
+        if (target) {
+            const headerOffset = 110;
+            const elementPosition =
+                target.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: elementPosition - headerOffset,
+                behavior: "smooth",
+            });
+        }
+
+        setMobileMenu(false);
+    };
+
     return (
         <>
             <header className="fixed top-0 left-0 z-50 w-full">
@@ -95,6 +117,9 @@ export default function Header() {
                                     <a
                                         key={item.name}
                                         href={item.href}
+                                        onClick={(e) =>
+                                            handleNavClick(e, item.href)
+                                        }
                                         className="relative text-[15px] font-medium text-slate-700 transition hover:text-indigo-600 after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0 after:bg-indigo-600 after:transition-all hover:after:w-full"
                                     >
                                         {item.name}
@@ -107,6 +132,7 @@ export default function Header() {
                                 <a
                                     href="https://wa.me/94716032454"
                                     target="_blank"
+                                    rel="noopener noreferrer"
                                     className="flex items-center gap-2 rounded-full bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 px-6 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
                                 >
                                     <FaWhatsapp className="text-xl" />
@@ -118,6 +144,7 @@ export default function Header() {
                             <button
                                 onClick={() => setMobileMenu(!mobileMenu)}
                                 className="rounded-xl border border-slate-200 p-2 text-slate-700 lg:hidden"
+                                aria-label="Toggle navigation menu"
                             >
                                 {mobileMenu ? (
                                     <HiOutlineX size={24} />
@@ -141,8 +168,8 @@ export default function Header() {
                                         <a
                                             key={item.name}
                                             href={item.href}
-                                            onClick={() =>
-                                                setMobileMenu(false)
+                                            onClick={(e) =>
+                                                handleNavClick(e, item.href)
                                             }
                                             className="font-medium text-slate-700 transition hover:text-indigo-600"
                                         >
@@ -153,6 +180,7 @@ export default function Header() {
                                     <a
                                         href="https://wa.me/94716032454"
                                         target="_blank"
+                                        rel="noopener noreferrer"
                                         className="mt-3 flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-sky-500 via-indigo-600 to-purple-600 py-4 font-semibold text-white"
                                     >
                                         <FaWhatsapp />

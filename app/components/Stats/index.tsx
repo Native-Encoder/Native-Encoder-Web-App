@@ -24,7 +24,7 @@ const stats = [
   },
   {
     icon: FaGlobe,
-    value: "75+",
+    value: "10+",
     title: "Business Clients",
     description:
       "Helping businesses grow through websites and digital marketing.",
