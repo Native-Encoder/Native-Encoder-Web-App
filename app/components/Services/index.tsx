@@ -42,7 +42,7 @@ const services = [
   },
   {
     icon: FaBullhorn,
-    title: "Social Media Management",
+    title: "Digital Marketing",
     description:
       "Creative content, branding, and digital marketing strategies to grow your business.",
     color: "pink",

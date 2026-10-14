@@ -36,6 +36,10 @@ export default function Header() {
             href: "#portfolio",
         },
         {
+            name: "Digital Marketing",
+            href: "#digitalmarketing",
+        },
+        {
             name: "Testimonials",
             href: "#testimonials",
         },

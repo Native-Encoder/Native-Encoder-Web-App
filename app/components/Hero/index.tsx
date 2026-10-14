@@ -134,7 +134,7 @@ export default function Hero() {
               </div>
 
               <div className="rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
-                📈 Social Media Management
+                📈 Digital Marketing
               </div>
 
             </div>
