@@ -8,6 +8,7 @@ import Portfolio from "./components/Portfolio";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import CTA from "./components/CTA";
+import DigitalMarketing from "./components/Digital Marketing";
 
 export default function Home() {
   return (
@@ -37,6 +38,11 @@ export default function Home() {
             <section id="portfolio">
                 <Portfolio />
             </section>
+
+            <section id="digitalmarketing">
+                <DigitalMarketing />
+            </section>
+
 
             <section id="testimonials">
                 <Testimonials />
